@@ -14,4 +14,6 @@ export class ProductSelectionComponent {
   pageTitle = 'Product Selection';
 
   quantity = signal(1);
+
+  products = signal(ProductData.products);
 }
