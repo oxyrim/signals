@@ -16,4 +16,6 @@ export class ProductSelectionComponent {
   quantity = signal(1);
 
   products = signal(ProductData.products);
+
+  selectedProduct = signal<Product | undefined>(undefined);
 }
