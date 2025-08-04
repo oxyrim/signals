@@ -6,7 +6,6 @@ import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-selection',
-  standalone: true,
   imports: [FormsModule, CurrencyPipe],
   templateUrl: './product-selection.component.html',
   styleUrl: './product-selection.component.scss',
