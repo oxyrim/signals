@@ -28,12 +28,20 @@
         <label for="quantity">Quantity:</label>
       </div>
       <div class="cellRight">
-        <input
-          type="number"
-          class="quantityInput"
-          id="quantity"
-          [(ngModel)]="quantity"
-        />
+        <div class="inputContainer">
+          <button class="qtyButton qtyButtonLeft" (click)="onDecrease()">
+            -
+          </button>
+          <input
+            type="number"
+            class="quantityInput"
+            id="quantity"
+            [(ngModel)]="quantity"
+          />
+          <button class="qtyButton qtyButtonRight" (click)="onIncrease()">
+            +
+          </button>
+        </div>
       </div>
     </div>
   </div>
