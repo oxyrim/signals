@@ -1,4 +1,10 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  effect,
+  linkedSignal,
+  signal,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductData } from '../products-data';
 import { Product } from '../product';
@@ -13,7 +19,12 @@ import { CurrencyPipe } from '@angular/common';
 export class ProductSelectionComponent {
   pageTitle = 'Product Selection';
 
-  quantity = signal(1);
+  selectedProduct = signal<Product | undefined>(undefined);
+
+  quantity = linkedSignal({
+    source: this.selectedProduct,
+    computation: (p) => 1,
+  });
 
   products = signal(ProductData.products);
 
@@ -22,8 +33,6 @@ export class ProductSelectionComponent {
   );
 
   color = computed(() => (this.total() > 200 ? 'green' : 'blue'));
-
-  selectedProduct = signal<Product | undefined>(undefined);
 
   onIncrease() {
     // this.quantity.set(5);
