@@ -3,6 +3,8 @@
 
   @if(isLoading()) {
   <div>...loading products</div>
+  } @else if (errorMessage()) {
+  <div style="color: red">An error occurred: {{ errorMessage() }}</div>
   } @else {
   <div class="grid">
     <div class="row">
