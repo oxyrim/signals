@@ -29,6 +29,13 @@ export class ProductSelectionComponent {
     computation: (p) => 1,
   });
 
+  /**
+   * Use this method to fetch new resource data whenever the component is initialized.
+   * This is useful for cases where the data might change frequently.
+   */
+  // productsResource = this.productService.createProduct();
+  // products = this.productsResource.value;
+
   products = this.productService.productsResource.value;
 
   total = computed(

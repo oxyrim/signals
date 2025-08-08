@@ -9,4 +9,14 @@ export class ProductService {
   productsResource = httpResource<Product[]>(() => this.productsUrl, {
     defaultValue: [],
   });
+
+  /**
+   * Use this method to fetch new resource data whenever the component is initialized.
+   * This is useful for cases where the data might change frequently.
+   */
+  //   createProduct() {
+  //     return httpResource<Product[]>(() => this.productsUrl, {
+  //       defaultValue: [],
+  //     });
+  //   }
 }
