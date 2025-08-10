@@ -4,16 +4,15 @@ import {
   effect,
   inject,
   linkedSignal,
-  signal,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Product } from '../product';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ProductService } from '../product.service';
+import { ReviewListComponent } from '../../reviews/review-list/review-list.component';
 
 @Component({
   selector: 'app-product-selection',
-  imports: [FormsModule, CurrencyPipe],
+  imports: [CommonModule, FormsModule, CurrencyPipe, ReviewListComponent],
   templateUrl: './product-selection.component.html',
   styleUrl: './product-selection.component.scss',
 })
