@@ -10,10 +10,14 @@ export class ReviewService {
   private productService = inject(ProductService);
 
   reviewsResource = httpResource<Review[]>(
-    () =>
-      `${this.reviewsUrl}?productId=^${
-        this.productService.selectedProduct()?.id
-      }$`,
+    () => {
+      const p = this.productService.selectedProduct();
+      if (p) {
+        return `${this.reviewsUrl}?productId=^${p.id}$`;
+      } else {
+      }
+      return undefined;
+    },
     { defaultValue: [] }
   );
 }

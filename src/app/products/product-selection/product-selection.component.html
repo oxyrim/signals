@@ -10,7 +10,7 @@
     <div class="row">
       <div class="cellFull">
         <select [(ngModel)]="selectedProduct">
-          <option value="undefined">--Select a product--</option>
+          <option [ngValue]="undefined">--Select a product--</option>
           @for(product of products(); track product.id) {
           <option [ngValue]="product">{{ product.productName }}</option>
           }
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  @if(selectedProduct()?.id) {
+  @if(selectedProduct()) {
   <app-review-list />
   } }
 </div>
