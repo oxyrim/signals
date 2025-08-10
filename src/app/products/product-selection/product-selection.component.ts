@@ -22,7 +22,7 @@ export class ProductSelectionComponent {
 
   private productService = inject(ProductService);
 
-  selectedProduct = signal<Product | undefined>(undefined);
+  selectedProduct = this.productService.selectedProduct;
 
   quantity = linkedSignal({
     source: this.selectedProduct,
